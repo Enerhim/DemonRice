@@ -1,0 +1,94 @@
+{
+  "position":"bottom",
+  "layer":"top",
+  "modules-left": [
+      "hyprland/workspaces"
+  ],
+  "modules-center": [
+      "clock", "mpris","idle_inhibitor"
+  ],
+  "modules-right": [
+      "pulseaudio",
+      "battery",
+      "tray"
+  ],
+  "mpris": {
+ 	"format": "{status_icon} {title} - {artist}",
+  "interval": 1,
+  "dynamic-len": 40,
+	"status-icons": {
+	"paused": "▶",
+	"playing": "⏸",
+	"stopped": ""
+	},
+    "title-len": 40
+    },
+  "hyprland/workspaces": {
+       "disable-scroll": true,
+       "all-outputs": true,
+       "format": "{icon}",
+       "format-icons": {
+           "1": "",
+           "2": "",
+           "3": "",
+           "4": "",
+           "5": "",
+           "urgent": "",
+           "focused": "",
+           "default": ""
+       }
+  },
+  "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+  },
+  "tray": {
+      // "icon-size": 21,
+      "spacing": 10
+  },
+  "clock": {
+      // "timezone": "America/New_York",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%Y-%m-%d}"
+  },
+  "backlight": {
+      // "device": "acpi_video1",
+      "format": "{percent}% {icon}",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+      "states": {
+          "good": 95,
+          "warning": 30,
+          "critical": 15
+      },
+      "format": "{capacity}% {icon}",
+      "format-full": "{capacity}% {icon}",
+      "format-charging": "{capacity}% ",
+      "format-plugged": "{capacity}% ",
+      "format-alt": "{time} {icon}",
+      // "format-good": "", // An empty format will hide the module
+      // "format-full": "",
+      "format-icons": ["", "", "", "", ""]
+  },
+  "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "{volume}% {icon}",
+      "format-bluetooth": "{volume}% {icon}",
+      "format-bluetooth-muted": " {icon}",
+      "format-muted": " {format_source}",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+  }
+}
